@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import products from './data.json'
+import { useState } from 'react';
+import ProductsPage from './components/ProductsPage';
 
 function App() {
+  const [allItems, setAllItems] = useState(products) 
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <ProductsPage allItems={allItems} setAllItems={setAllItems}/>
+
     </div>
   );
 }
